@@ -8,7 +8,8 @@
 ## Last update Wed Nov  9 22:42:34 2016 Antonin Rapini
 ##
 
-SRC	=	utils/my_put_nbr.c	\
+SRC	=	utils/my_put_sint.c	\
+		utils/my_put_uint.c	\
 		utils/my_strlen.c	\
 		utils/my_putchar.c	\
 		utils/my_putstr.c	\

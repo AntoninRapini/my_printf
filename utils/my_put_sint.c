@@ -10,7 +10,7 @@
 
 #include "utils.h"
 
-int	my_put_nbr(int nb)
+int	my_put_sint(int nb, int verbose)
 {
   int	div;
 
@@ -20,6 +20,8 @@ int	my_put_nbr(int nb)
       my_putchar('-');
       nb = -nb;
     }
+  else if (verbose)
+    my_putchar('+');
   while (nb/div >= 10)
     {
       div = div * 10;

@@ -27,7 +27,7 @@ int	my_showstr(char *str)
       else
 	{
 	  my_putchar('\\');
-	  my_putnbr_base(*str, "01234567");
+	  my_putnbr_base(*str, "01234567", 1);
 	}
       str = str + 1;
     }

@@ -23,6 +23,6 @@ int	main(void)
 */
   int kek = -98;
   int lol = 98;
-  my_printf("%o\n", kek);
-  printf("%o", kek);
+  my_printf("%#x\n", lol);
+  printf("%#x", lol);
 }

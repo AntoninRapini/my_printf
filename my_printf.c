@@ -20,31 +20,7 @@ void		my_printf(char *s, ...)
     {
       if(*s == '%' && *(s + 1))
 	{
-	  s++;
-	  if (*s == 'c')
-	    my_putchar(va_arg(list, int));
-	  else if (*s == 's')
-	    my_putstr(va_arg(list, char *));
-	  else if (*s == 'i')
-	    my_put_nbr(va_arg(list, int));
-	  else if(*s == 'u')
-	    my_put_nbr(va_arg(list, unsigned int));
-	  else if(*s == 'o')
-	    my_putnbr_base(va_arg(list, unsigned int), "01234567");
-	  else if(*s == 'x')
-	    my_putnbr_base(va_arg(list, unsigned int), "0123456789abcdef");
-	  else if(*s == 'X')
-	    my_putnbr_base(va_arg(list, unsigned int), "0123456789ABCDEF");
-	  else if(*s == 'p')
-	    my_put_nbr(va_arg(list, unsigned int));
-	  else if (*s == '%')
-	    my_putchar('%');
-	  else if (*s == 'b')
-	    my_putnbr_base(va_arg(list, unsigned int), "01");
-	  else if (*s == 'S')
-	    my_showstr(va_arg(list, char *));
-	  else if (*s == 'P')
-	    my_putnbr_base(va_arg(list, unsigned int), "0123456789ABCDEF");
+	  s += call_func(&list, s);
 	}
       else
 	{
@@ -53,4 +29,48 @@ void		my_printf(char *s, ...)
       s++;
     }
   va_end(list);
+}
+
+int	is_alpha(char s)
+{
+  return ((s >= 'a' && s <= 'z')
+	  || (s >= 'A' && s <= 'Z'));
+}
+
+int	call_func(va_list *list, char *s)
+{
+  int	i;
+  
+  i = 1;
+  s++;
+  while (*s && (!is_alpha(*s) || *s == '%'))
+    {
+      s++;
+      i++;
+    }
+  if (*s == 'c')
+    my_putchar(va_arg(*list, int));
+  else if (*s == 's')
+    my_putstr(va_arg(*list, char *));
+  else if (*s == 'i')
+    my_put_sint(va_arg(*list, int), *(s - 1) == '+');
+  else if(*s == 'u')
+    my_put_uint(va_arg(*list, unsigned int));
+  else if(*s == 'o')
+    my_putnbr_base(va_arg(*list, unsigned int), "01234567", *(s - 1) == '#');
+  else if(*s == 'x')
+    my_putnbr_base(va_arg(*list, unsigned int), "0123456789abcdef", *(s - 1) == '#');
+  else if(*s == 'X')
+    my_putnbr_base(va_arg(*list, unsigned int), "0123456789ABCDEF", *(s - 1) == '#');
+  else if(*s == 'p')
+    my_put_uint(va_arg(*list, unsigned int));
+  else if (*s == '%')
+    my_putchar('%');
+  else if (*s == 'b')
+    my_putnbr_base(va_arg(*list, unsigned int), "01", 0);
+  else if (*s == 'S')
+    my_showstr(va_arg(*list, char *));
+  else if (*s == 'P')
+    my_putnbr_base(va_arg(*list, unsigned int), "0123456789ABCDEF", 1);
+  return (i);
 }

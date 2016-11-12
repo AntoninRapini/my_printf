@@ -10,19 +10,16 @@
 
 #include "utils.h"
 
-int	my_putnbr_base(int nbr, char *base)
+int	my_putnbr_base(unsigned int nbr, char *base, int verbose)
 {
   int	base_length;
   int	div;
 
   base_length = 0;
   div = 1;
-  if (nbr < 0)
-    {
-      my_putchar(45);
-      nbr = -nbr;
-    }
   base_length = my_strlen(base);
+  if (verbose)
+    show_base(base_length, verbose);
   while (nbr / div >= base_length)
     {
       div = div * base_length;
@@ -35,4 +32,16 @@ int	my_putnbr_base(int nbr, char *base)
     }
   my_putchar(base[nbr / div]);
   return (0);
+}
+
+void	show_base(int base_length, int verbose)
+{
+  if (base_length == 16)
+    my_putstr("0x");
+  else if (base_length == 8)
+    {
+      if(verbose == 2)
+	my_putchar('0');
+      my_putchar('0');
+    }
 }
