@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Nov  9 22:06:30 2016 Antonin Rapini
-** Last update Sat Nov 12 18:03:27 2016 Antonin Rapini
+** Last update Mon Nov 14 15:41:16 2016 Antonin Rapini
 */
 
 #include <stdio.h>
@@ -21,8 +21,12 @@ int	main(void)
   str[3] = 'o';
   str[4] = '\0';
 */
-  int kek = -98;
-  int lol = 98;
-  my_printf("%#x\n", lol);
-  printf("%#x", lol);
+
+  int a = -89;
+  int b = 10;
+  int c = 189;
+  //my_printf("%p\n", &lol);
+  //  printf("%i\n", a);
+  b = my_printf("%o\n", a);
+  my_put_sint(b, 0);
 }

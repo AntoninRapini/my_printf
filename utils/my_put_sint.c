@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Oct  5 17:27:29 2016 Antonin Rapini
-** Last update Sat Nov 12 17:44:48 2016 Antonin Rapini
+** Last update Mon Nov 14 15:34:40 2016 Antonin Rapini
 */
 
 #include "utils.h"
@@ -13,24 +13,26 @@
 int	my_put_sint(int nb, int verbose)
 {
   int	div;
+  int	str_length;
 
+  str_length = 0;
   div = 1;
   if (nb < 0)
     {
-      my_putchar('-');
+      str_length += my_putchar('-');
       nb = -nb;
     }
   else if (verbose)
-    my_putchar('+');
+    str_length += my_putchar('+');
   while (nb/div >= 10)
     {
       div = div * 10;
     }
   while (div >= 1)
     {
-      my_putchar((nb/div) + '0');
+      str_length += my_putchar((nb/div) + '0');
       nb = nb % div;
       div = div / 10;
     }
-  return (0);
+  return (str_length);
 }

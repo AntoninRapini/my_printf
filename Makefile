@@ -5,7 +5,7 @@
 ## Login   <antonin.rapini@epitech.net>
 ## 
 ## Started on  Tue Nov  8 15:23:05 2016 Antonin Rapini
-## Last update Wed Nov  9 22:42:34 2016 Antonin Rapini
+## Last update Sun Nov 13 21:28:26 2016 Antonin Rapini
 ##
 
 SRC	=	utils/my_put_sint.c	\
@@ -14,6 +14,7 @@ SRC	=	utils/my_put_sint.c	\
 		utils/my_putchar.c	\
 		utils/my_putstr.c	\
 		utils/my_putnbr_base.c	\
+		utils/my_put_ptr.c	\
 		utils/my_showstr.c	\
 		my_printf.c		\
 		test.c
