@@ -5,23 +5,23 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 11 12:52:20 2016 Antonin Rapini
-** Last update Mon Nov 14 15:32:56 2016 Antonin Rapini
+** Last update Wed Nov 16 10:59:54 2016 Antonin Rapini
 */
 
 #include "utils.h"
 
-int	my_putnbr_base(unsigned int nbr, char *base, int verbose)
+int		my_putnbr_base(unsigned int nbr, char *base, int verbose)
 {
-  int	base_length;
-  int	div;
-  int	str_length;
+  unsigned int	base_length;
+  int		div;
+  int		str_length;
 
   str_length = 0;
   base_length = 0;
   div = 1;
   base_length = my_strlen(base);
   if (verbose)
-    str_length += show_base(base_length, verbose);
+    str_length += show_base(base_length, verbose, base);
   while (nbr / div >= base_length)
     {
       div = div * base_length;
@@ -36,11 +36,14 @@ int	my_putnbr_base(unsigned int nbr, char *base, int verbose)
   return (str_length);
 }
 
-int	show_base(int base_length, int verbose)
+int	show_base(int base_length, int verbose, char *base)
 {
   if (base_length == 16)
     {
-      my_putstr("0x");
+      if (base[base_length - 1] == 'f')
+	my_putstr("0x");
+      else
+	my_putstr("0X");
       return (2);
     }
   else if (base_length == 8)
@@ -53,4 +56,5 @@ int	show_base(int base_length, int verbose)
 	}
       return (1);
     }
+  return (0);
 }

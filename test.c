@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Nov  9 22:06:30 2016 Antonin Rapini
-** Last update Mon Nov 14 15:41:16 2016 Antonin Rapini
+** Last update Wed Nov 16 10:49:40 2016 Antonin Rapini
 */
 
 #include <stdio.h>
@@ -27,6 +27,6 @@ int	main(void)
   int c = 189;
   //my_printf("%p\n", &lol);
   //  printf("%i\n", a);
-  b = my_printf("%o\n", a);
-  my_put_sint(b, 0);
+  my_printf("%#X\n", c);
+  printf("%#X\n", c);
 }

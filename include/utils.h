@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Nov  8 15:14:31 2016 Antonin Rapini
-** Last update Mon Nov 14 15:40:37 2016 Antonin Rapini
+** Last update Wed Nov 16 10:47:52 2016 Antonin Rapini
 */
 
 #ifndef UTILS_H_
@@ -25,5 +25,5 @@ int	my_showstr(char *);
 char	char_is_printable(char);
 int	is_alpha(char);
 int	call_func(va_list *, char *, int *);
-int	show_base(int, int);
+int	show_base(int, int, char *);
 #endif /* !UTILS_H_ */

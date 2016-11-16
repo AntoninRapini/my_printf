@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 11 12:52:20 2016 Antonin Rapini
-** Last update Mon Nov 14 15:33:42 2016 Antonin Rapini
+** Last update Wed Nov 16 11:00:25 2016 Antonin Rapini
 */
 
 #include "utils.h"
@@ -13,7 +13,7 @@
 
 int		my_put_ptr(uintptr_t nbr, char *base, int verbose)
 {
-  int		base_length;
+  unsigned int	base_length;
   uintptr_t	div;
   int		str_length;
 
@@ -22,7 +22,7 @@ int		my_put_ptr(uintptr_t nbr, char *base, int verbose)
   div = 1;
   base_length = my_strlen(base);
   if (verbose)
-    str_length += show_base(base_length, verbose);
+    str_length += show_base(base_length, verbose, base);
   while (nbr / div >= base_length)
     {
       div = div * base_length;

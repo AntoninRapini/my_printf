@@ -5,7 +5,7 @@
 ## Login   <antonin.rapini@epitech.net>
 ## 
 ## Started on  Tue Nov  8 15:23:05 2016 Antonin Rapini
-## Last update Sun Nov 13 21:28:26 2016 Antonin Rapini
+## Last update Wed Nov 16 10:56:53 2016 Antonin Rapini
 ##
 
 SRC	=	utils/my_put_sint.c	\
@@ -16,20 +16,21 @@ SRC	=	utils/my_put_sint.c	\
 		utils/my_putnbr_base.c	\
 		utils/my_put_ptr.c	\
 		utils/my_showstr.c	\
-		my_printf.c		\
-		test.c
+		my_printf.c
+
+OBJ =		$(SRC:.c=.o)
 
 CFLAGS 	+= -Wall -Wextra
-
-NAME	= test
+CFLAGS 	+= -I include/
+NAME	= libmy.a
 
 all: $(NAME)
 
-$(NAME):
-	gcc $(SRC) -I include/
+$(NAME):	$(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 clean:
-	rm -f $(NAME)
+	rm -f $(OBJ)
 
 fclean:	clean
 	rm -f $(NAME)
