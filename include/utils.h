@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Nov  8 15:14:31 2016 Antonin Rapini
-** Last update Wed Nov 16 10:47:52 2016 Antonin Rapini
+** Last update Fri Nov 18 13:49:43 2016 Antonin Rapini
 */
 
 #ifndef UTILS_H_
@@ -13,6 +13,7 @@
 
 #include <stdarg.h>
 #include <stdint.h>
+#include "format.h"
 
 int	my_putstr(char *);
 int	my_putchar(char);
@@ -24,6 +25,6 @@ int     my_put_ptr(uintptr_t, char *, int);
 int	my_showstr(char *);
 char	char_is_printable(char);
 int	is_alpha(char);
-int	call_func(va_list *, char *, int *);
+int	call_func(va_list *, char *, int *, t_format *);
 int	show_base(int, int, char *);
 #endif /* !UTILS_H_ */

@@ -5,7 +5,7 @@
 ## Login   <antonin.rapini@epitech.net>
 ## 
 ## Started on  Tue Nov  8 15:23:05 2016 Antonin Rapini
-## Last update Wed Nov 16 10:56:53 2016 Antonin Rapini
+## Last update Fri Nov 18 13:46:19 2016 Antonin Rapini
 ##
 
 SRC	=	utils/my_put_sint.c	\
@@ -16,6 +16,10 @@ SRC	=	utils/my_put_sint.c	\
 		utils/my_putnbr_base.c	\
 		utils/my_put_ptr.c	\
 		utils/my_showstr.c	\
+		utils/format_text.c	\
+		utils/format_numbers.c	\
+		utils/format_utils.c	\
+		utils/create_formatting_array.c	\
 		my_printf.c
 
 OBJ =		$(SRC:.c=.o)
