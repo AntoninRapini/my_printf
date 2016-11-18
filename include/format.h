@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Nov 18 13:21:21 2016 Antonin Rapini
-** Last update Fri Nov 18 13:37:45 2016 Antonin Rapini
+** Last update Fri Nov 18 15:04:56 2016 Antonin Rapini
 */
 
 #ifndef FORMAT_H_

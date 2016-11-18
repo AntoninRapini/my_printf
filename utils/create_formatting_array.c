@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Nov 18 13:27:32 2016 Antonin Rapini
-** Last update Fri Nov 18 14:21:33 2016 Antonin Rapini
+** Last update Fri Nov 18 15:04:21 2016 Antonin Rapini
 */
 
 #include "format.h"
@@ -15,7 +15,7 @@ t_format	*create_formatting_array()
 {
   t_format	*arr;
 
-  arr = malloc(sizeof(t_format) * 11);
+  arr = malloc(sizeof(t_format) * 12);
   arr[0].key = 'i';
   arr[0].format_funcptr = &format_sint;
   arr[1].key = 'u';
@@ -38,6 +38,8 @@ t_format	*create_formatting_array()
   arr[9].format_funcptr = &format_binary;
   arr[10].key = '%';
   arr[10].format_funcptr = &format_percent;
-  arr[11].key = 0;
+  arr[11].key = 'd';
+  arr[11].format_funcptr = &format_sint;
+  arr[12].key = 0;
   return (arr);
 }
