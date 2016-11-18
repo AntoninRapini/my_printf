@@ -5,41 +5,36 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Nov 18 13:27:32 2016 Antonin Rapini
-** Last update Fri Nov 18 15:04:21 2016 Antonin Rapini
+** Last update Fri Nov 18 21:26:31 2016 Antonin Rapini
 */
 
 #include "format.h"
 #include <stdlib.h>
+#include "utils.h"
+
+void		populate_format_array(t_format *arr, int (*func)(va_list *list, char *str), char *str)
+{
+  arr->key = my_strdup(str);
+  arr->format_funcptr = func;
+}
 
 t_format	*create_formatting_array()
 {
   t_format	*arr;
 
-  arr = malloc(sizeof(t_format) * 12);
-  arr[0].key = 'i';
-  arr[0].format_funcptr = &format_sint;
-  arr[1].key = 'u';
-  arr[1].format_funcptr = &format_uint;
-  arr[2].key = 'o';
-  arr[2].format_funcptr = &format_octal;
-  arr[3].key = 'x';
-  arr[3].format_funcptr = &format_hexa;
-  arr[4].key = 'X';
-  arr[4].format_funcptr = &format_chexa;
-  arr[5].key = 'c';
-  arr[5].format_funcptr = &format_char;
-  arr[6].key = 's';
-  arr[6].format_funcptr = &format_string;
-  arr[7].key = 'S';
-  arr[7].format_funcptr = &format_showstring;
-  arr[8].key = 'p';
-  arr[8].format_funcptr = &format_ptr;
-  arr[9].key = 'b';
-  arr[9].format_funcptr = &format_binary;
-  arr[10].key = '%';
-  arr[10].format_funcptr = &format_percent;
-  arr[11].key = 'd';
-  arr[11].format_funcptr = &format_sint;
-  arr[12].key = 0;
+  arr = malloc(sizeof(t_format) * 13);
+  populate_format_array(arr, &format_sint, "i");
+  populate_format_array(arr + 1, &format_uint, "u");
+  populate_format_array(arr + 2, &format_octal, "o");
+  populate_format_array(arr + 3, &format_hexa, "x");
+  populate_format_array(arr + 4, &format_chexa, "X");
+  populate_format_array(arr + 5, &format_char, "c");
+  populate_format_array(arr + 6, &format_string, "s");
+  populate_format_array(arr + 7, &format_showstring, "S");
+  populate_format_array(arr + 8, &format_ptr, "p");
+  populate_format_array(arr + 9, &format_binary, "b");
+  populate_format_array(arr + 10, &format_percent, "%");
+  populate_format_array(arr + 11, &format_sint, "d");
+  populate_format_array(arr + 12, NULL, "\0");
   return (arr);
 }

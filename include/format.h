@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Nov 18 13:21:21 2016 Antonin Rapini
-** Last update Fri Nov 18 15:04:56 2016 Antonin Rapini
+** Last update Fri Nov 18 18:38:16 2016 Antonin Rapini
 */
 
 #ifndef FORMAT_H_
@@ -16,7 +16,7 @@
 
 typedef struct	s_format
 {
-  char		key;
+  char		*key;
   int		(*format_funcptr)(va_list *list, char *str);
 }		t_format;
 
