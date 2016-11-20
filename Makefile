@@ -5,7 +5,7 @@
 ## Login   <antonin.rapini@epitech.net>
 ## 
 ## Started on  Tue Nov  8 15:23:05 2016 Antonin Rapini
-## Last update Sun Nov 20 18:52:24 2016 Antonin Rapini
+## Last update Sun Nov 20 20:41:22 2016 Antonin Rapini
 ##
 
 SRC	=	utils/my_put_sint.c	\
@@ -47,16 +47,15 @@ SRC	=	utils/my_put_sint.c	\
 		utils/formats/format_uint.c	\
 		my_printf.c
 
-OBJ =		$(SRC:.c=.o)
+OBJ 	= $(SRC:.c=.o)
 
-CFLAGS 	+= -Wall -Wextra
 CFLAGS 	+= -I include/
 
 NAME	= libmy.a
 
 all: $(NAME)
 
-$(NAME):	$(OBJ)
+$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 clean:

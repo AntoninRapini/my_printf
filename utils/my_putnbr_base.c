@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 11 12:52:20 2016 Antonin Rapini
-** Last update Sun Nov 20 19:08:52 2016 Antonin Rapini
+** Last update Sun Nov 20 20:21:19 2016 Antonin Rapini
 */
 
 #include "utils.h"
@@ -15,7 +15,7 @@ int		my_putnbr_base(unsigned int nbr, char *base, int verbose)
   unsigned int	base_length;
   unsigned int	div;
   int		str_length;
-  
+
   str_length = 0;
   base_length = 0;
   div = 1;
@@ -46,7 +46,7 @@ int	show_base(int base_length, int verbose, char *base)
   else if (base_length == 8)
     {
       my_putchar('0');
-      if(verbose == 2)
+      if (verbose == 2)
 	{
 	  my_putchar('0');
 	  return (2);

@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Nov  8 15:14:31 2016 Antonin Rapini
-** Last update Sun Nov 20 20:01:44 2016 Antonin Rapini
+** Last update Sun Nov 20 20:34:21 2016 Antonin Rapini
 */
 
 #ifndef UTILS_H_
@@ -43,4 +43,5 @@ int	my_getnbr(char *);
 int	my_nbrlen_base(unsigned int, int);
 int	my_nbrlen(int);
 int	my_ptrlen(uintptr_t);
+void	assign_sizes(char *, t_formatspecifier *, int);
 #endif /* !UTILS_H_ */

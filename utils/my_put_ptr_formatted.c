@@ -5,13 +5,13 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sat Nov 19 23:42:48 2016 Antonin Rapini
-** Last update Sun Nov 20 20:01:31 2016 Antonin Rapini
+** Last update Sun Nov 20 20:20:28 2016 Antonin Rapini
 */
 
+#include <stdint.h>
 #include <unistd.h>
 #include "format.h"
 #include "utils.h"
-#include <stdint.h>
 
 int	my_put_ptr_formatted(t_formatspecifier *format, uintptr_t nbr)
 {

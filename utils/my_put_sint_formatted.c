@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sat Nov 19 23:42:48 2016 Antonin Rapini
-** Last update Sun Nov 20 19:40:04 2016 Antonin Rapini
+** Last update Sun Nov 20 20:18:38 2016 Antonin Rapini
 */
 
 #include <unistd.h>
@@ -20,7 +20,7 @@ int	my_put_sint_formatted(t_formatspecifier *format, int nbr, int verbose)
 
   nbr_len = my_nbrlen(nbr) + (verbose > 0 && nbr > 0);
   whitespace = format->display_size - nbr_len;
-  i = 0; 
+  i = 0;
   if (format->padding)
     {
       my_put_sint(nbr, verbose);

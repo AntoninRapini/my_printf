@@ -5,11 +5,11 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Nov 18 13:27:32 2016 Antonin Rapini
-** Last update Sun Nov 20 19:16:16 2016 Antonin Rapini
+** Last update Sun Nov 20 20:19:41 2016 Antonin Rapini
 */
 
-#include "format.h"
 #include <stdlib.h>
+#include "format.h"
 #include "utils.h"
 
 void populate_format_array
@@ -24,6 +24,8 @@ t_format	*create_formatting_array()
   t_format	*arr;
 
   arr = malloc(sizeof(t_format) * 13);
+  if (arr == NULL)
+    exit (84);
   populate_format_array(arr, &format_sint, "i");
   populate_format_array(arr + 1, &format_uint, "u");
   populate_format_array(arr + 2, &format_octal, "o");

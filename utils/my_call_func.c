@@ -5,13 +5,13 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Nov  8 15:51:15 2016 Antonin Rapini
-** Last update Sun Nov 20 19:03:45 2016 Antonin Rapini
+** Last update Sun Nov 20 20:22:59 2016 Antonin Rapini
 */
 
 #include <stdarg.h>
+#include <stdlib.h>
 #include "utils.h"
 #include "format.h"
-#include <stdlib.h>
 
 int			my_call_func(va_list *list, char *s, int *str_length, t_format *arr)
 {

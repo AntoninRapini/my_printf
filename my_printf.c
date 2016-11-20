@@ -5,14 +5,14 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Nov  8 15:51:15 2016 Antonin Rapini
-** Last update Sun Nov 20 00:11:30 2016 Antonin Rapini
+** Last update Sun Nov 20 20:15:33 2016 Antonin Rapini
 */
 
-#include <stdarg.h>
-#include "utils.h"
-#include <stdint.h>
-#include "format.h"
 #include <stdlib.h>
+#include <stdarg.h>
+#include <stdint.h>
+#include "utils.h"
+#include "format.h"
 
 int		my_printf(char *s, ...)
 {
@@ -25,7 +25,7 @@ int		my_printf(char *s, ...)
   va_start(list, s);
   while (*s)
     {
-      if(*s == '%' && *(s + 1))
+      if (*s == '%' && *(s + 1))
 	s += my_call_func(&list, s, &str_length, arr);
       else
 	{

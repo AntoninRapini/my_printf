@@ -5,12 +5,12 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 11 12:52:20 2016 Antonin Rapini
-** Last update Sun Nov 20 20:02:04 2016 Antonin Rapini
+** Last update Sun Nov 20 20:22:46 2016 Antonin Rapini
 */
 
-#include "utils.h"
 #include <stdint.h>
 #include <stdlib.h>
+#include "utils.h"
 
 int		my_put_ptr(uintptr_t nbr, char *base)
 {
