@@ -5,14 +5,15 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Nov 18 13:27:32 2016 Antonin Rapini
-** Last update Fri Nov 18 21:26:31 2016 Antonin Rapini
+** Last update Sun Nov 20 19:16:16 2016 Antonin Rapini
 */
 
 #include "format.h"
 #include <stdlib.h>
 #include "utils.h"
 
-void		populate_format_array(t_format *arr, int (*func)(va_list *list, char *str), char *str)
+void populate_format_array
+(t_format *arr, int (*func)(va_list *, char *, t_formatspecifier *), char *str)
 {
   arr->key = my_strdup(str);
   arr->format_funcptr = func;

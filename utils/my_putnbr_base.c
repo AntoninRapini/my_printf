@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Tue Oct 11 12:52:20 2016 Antonin Rapini
-** Last update Wed Nov 16 10:59:54 2016 Antonin Rapini
+** Last update Sun Nov 20 19:08:52 2016 Antonin Rapini
 */
 
 #include "utils.h"
@@ -13,9 +13,9 @@
 int		my_putnbr_base(unsigned int nbr, char *base, int verbose)
 {
   unsigned int	base_length;
-  int		div;
+  unsigned int	div;
   int		str_length;
-
+  
   str_length = 0;
   base_length = 0;
   div = 1;
@@ -23,16 +23,13 @@ int		my_putnbr_base(unsigned int nbr, char *base, int verbose)
   if (verbose)
     str_length += show_base(base_length, verbose, base);
   while (nbr / div >= base_length)
-    {
       div = div * base_length;
-    }
-  while (div > 1)
+  while (div >= 1)
     {
       str_length += my_putchar(base[nbr / div]);
       nbr = nbr % div;
       div = div / base_length;
     }
-  str_length += my_putchar(base[nbr / div]);
   return (str_length);
 }
 
